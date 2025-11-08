@@ -1,0 +1,24 @@
+﻿@model SistemaEmpresarial.Models.ViewModels.ContactoFormViewModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar Contacto</h1>
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+    <!--<div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
+    <input type="hidden" asp-for="Contacto.con_id" />
+    <div class="mb-3">
+        <label class="form-label">ID</label>
+        <input class="form-control" value="@Model.Contacto.con_id" disabled />
+    </div>
+
+    <partial name="_ContactoFormBody" model="Model" />
+    
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>    
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,72 @@
+﻿@model SistemaEmpresarial.Models.ViewModels.VendedorFormViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+<div class="form-group">
+    <label asp-for="Vendedor.ven_nombre" class="control-label"></label>
+    <input asp-for="Vendedor.ven_nombre" class="form-control" />
+    <span asp-validation-for="Vendedor.ven_nombre" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Vendedor.ven_paterno" class="control-label"></label>
+    <input asp-for="Vendedor.ven_paterno" class="form-control" />
+    <span asp-validation-for="Vendedor.ven_paterno" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Vendedor.ven_materno" class="control-label"></label>
+    <input asp-for="Vendedor.ven_materno" class="form-control" />
+    <span asp-validation-for="Vendedor.ven_materno" class="text-danger"></span>
+</div>
+
+@{
+    //a.	Dropdown List usando una lista de código    
+}
+<div class="form-group">
+    <label asp-for="Vendedor.ven_sucursalsuc_id" class="control-label"></label>
+    <select asp-for="Vendedor.ven_sucursalsuc_id" asp-items="Model.Sucursales" class="form-select"></select>
+</div>
+
+@{
+    //c.	Radio button codificando en 1 campo
+}
+<div class="mb-3">
+    <label class="form-label"></label>@Html.DisplayNameFor(model => model.Vendedor.ven_rol)<br />
+    <div class="form-group form-check-inline">        
+        <input class="form-check-input" type="radio" asp-for="Vendedor.ven_rol" value="V" checked="@Model.Vendedor.ven_rol.Equals('V')" />
+        <label class="form-check-label">Vendedor</label>        
+    </div>
+    <div class="form-group form-check-inline">        
+        <input class="form-check-input" type="radio" asp-for="Vendedor.ven_rol" value="S" checked="@Model.Vendedor.ven_rol.Equals('S')" />
+        <label class="form-check-label">Supervisor</label>        
+    </div>
+</div>
+
+@{
+    //g.	Número
+}
+<div class="mb-3">
+    <label asp-for="Vendedor.ven_clave_empleado" class="form-label"></label>
+    <input asp-for="Vendedor.ven_clave_empleado" type="number" class="form-control" step="1" />
+    <span asp-validation-for="Vendedor.ven_clave_empleado" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Vendedor.ven_clave_agente" class="control-label"></label>
+    <input asp-for="Vendedor.ven_clave_agente" class="form-control" />
+    <span asp-validation-for="Vendedor.ven_clave_agente" class="text-danger"></span>
+</div>
+
+@{
+    //i.	Switch
+}
+<div class="form-check form-switch mb-3">
+    <input class="form-check-input" asp-for="Vendedor.ven_estatus" /> @Html.DisplayNameFor(model => model.Vendedor.ven_estatus)
+</div>
+
+@{
+    //g.	Número
+}
+<div class="mb-3">
+    <label asp-for="Vendedor.ven_objetivo" class="form-label"></label>
+    <input asp-for="Vendedor.ven_objetivo" type="number" class="form-control" step="1" />
+    <span asp-validation-for="Vendedor.ven_objetivo" class="text-danger"></span>
+</div>

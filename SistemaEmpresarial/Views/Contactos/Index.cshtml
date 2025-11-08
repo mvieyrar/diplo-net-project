@@ -1,0 +1,259 @@
+﻿@model SistemaEmpresarial.Models.ViewModels.ContactoIndexViewModel
+@{
+//@model IEnumerable<SistemaEmpresarial.Models.Contacto>
+}
+
+@{
+    ViewData["Title"] = "Contactos";
+}
+
+<div class="row g-3">
+    <!-- Filtro -->
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-header">Filtro</div>
+            <div class="card-body">
+                <!-- Aplica filtro -->
+                <form method="get" class="vstack gap-2">
+                    <input type="hidden" name="mode" value="filter" />
+
+                    <div>
+                        <label asp-for="Filtro.con_id" class="form-label"></label>
+                        <input asp-for="Filtro.con_id" class="form-control" />
+                    </div>
+
+                    <div>
+                        <label asp-for="Filtro.con_nombre_like" class="form-label"></label>
+                        <input asp-for="Filtro.con_nombre_like" class="form-control" placeholder="Contiene…" />
+                    </div>
+
+                    <div class="row g-2">
+                        <div class="col">
+                            <label asp-for="Filtro.con_fecha_creacion_from" class="form-label"></label>
+                            <input asp-for="Filtro.con_fecha_creacion_from" type="date" class="form-control" />
+                        </div>
+                        <div class="col">
+                            <label asp-for="Filtro.con_fecha_creacion_to" class="form-label"></label>
+                            <input asp-for="Filtro.con_fecha_creacion_to" type="date" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Region</label>
+                        <select asp-for="Filtro.RegionesSeleccionadas"
+                                asp-items="Model.Filtro.RegionesOptions"
+                                class="form-select"  ></select>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Aplicar Filtro</button>
+                    </div>
+                </form>
+
+                <!-- Mostrar todos -->
+                <form method="get" class="mt-2 d-grid">
+                    <input type="hidden" name="mode" value="all" />
+                    <button class="btn btn-outline-secondary">Mostrar todos</button>
+                </form>
+
+                <a class="btn btn-success mt-3 w-100" asp-action="Create">Crear</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="col-lg-9">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>Resultados @(Model.Resultados?.TotalCount ?? 0)</span>
+            </div>
+            <div class="card-body p-0">
+                <!-- Form de paginación (conserva filtros como hidden) -->
+                <form method="get" class="m-0 p-0">
+                    <input type="hidden" name="mode" value="filter" />
+                    <!-- Hiddens para mantener filtros al cambiar de página -->
+                    <input type="hidden" name="Filtro.con_id" value="@(Model.Filtro.con_id)" />
+                    <input type="hidden" name="Filtro.con_nombre_like" value="@(Model.Filtro.con_nombre_like)" />
+                    <input type="hidden" name="Filtro.con_fecha_creacion_from" value="@(Model.Filtro.con_fecha_creacion_from?.ToString("yyyy-MM-dd"))" />
+                    <input type="hidden" name="Filtro.con_fecha_creacion_to" value="@(Model.Filtro.con_fecha_creacion_to?.ToString("yyyy-MM-dd"))" />
+                    @foreach (var s in Model.Filtro.RegionesSeleccionadas)
+                    {
+                        <input type="hidden" name="Filtro.AreaInteresSeleccionadas" value="@s" />
+                    }
+
+                    <table class="table table-striped table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Area interes</th>
+                                <th>Fecha de Alta</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Resultados is not null)
+                            {
+                                foreach (var c in Model.Resultados)
+                                {
+                                    <tr>
+                                        <td>@c.con_id</td>
+                                        <td>@c.con_nombre</td>
+                                        <td>@c.con_area_interes</td>
+                                        <td>@c.con_fecha_creacion.ToString("yyyy-MM-dd")</td>
+                                        <td>@c.con_estatus</td>
+                                        <td class="text-nowrap">
+                                            <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-route-id="@c.con_id">Consultar</a>
+                                            <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@c.con_id">Editar</a>
+                                            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@c.con_id">Borrar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                    <div class="p-3">
+                        @if (Model.Resultados is not null)
+                        {
+                            @await Html.PartialAsync("_Pagination", Model.Resultados)
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{/**
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.con_id)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.con_nombre)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.con_paterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_materno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_empresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_red_social)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.con_tipo_red_social)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_genero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_disponibilidad_matutino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_disponibilidad_vespertino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_area_interes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_fecha_creacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_comentario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.con_estatus)
+            </th>            
+            <th></th>            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_id)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.con_nombre)
+            </td>
+               
+            <td>
+                @Html.DisplayFor(modelItem => item.con_paterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_materno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_empresa)
+            </td>
+            <td>
+                @{/*@Html.DisplayFor(modelItem => item.con_region?.reg_nombre)}
+                @item.con_region?.reg_nombre
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_red_social)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_tipo_red_social)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_genero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_disponibilidad_matutino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_disponibilidad_vespertino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_area_interes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_fecha_creacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.con_estatus)
+            </td>                
+            <td>
+                <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@item.con_id">Edit</a> |
+                <a class="btn btn-sm btn-warning" asp-action="Details" asp-route-id="@item.con_id">Details</a> |
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.con_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+*/}

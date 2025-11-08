@@ -1,0 +1,115 @@
+﻿@model SistemaEmpresarial.Models.ViewModels.EmpresaFormViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+<div class="form-group">
+    <label asp-for="Empresa.emp_nombre" class="control-label"></label>
+    <input asp-for="Empresa.emp_nombre" class="form-control" />
+    <span asp-validation-for="Empresa.emp_nombre" class="text-danger"></span>
+</div>
+
+@{
+    //c.	Radio button codificando en 1 campo
+}
+<div class="mb-3">
+    <label class="form-label"></label>@Html.DisplayNameFor(model => model.Empresa.emp_tipo)<br />
+    <div class="form-group form-check-inline">
+        <input class="form-check-input" type="radio" asp-for="Empresa.emp_tipo" value="C" checked="@Model.Empresa.emp_tipo.Equals('C')" />
+        <label class="form-check-label">Cliente</label>
+    </div>
+    <div class="form-group form-check-inline">
+        <input class="form-check-input" type="radio" asp-for="Empresa.emp_tipo" value="S" checked="@Model.Empresa.emp_tipo.Equals('P')" />
+        <label class="form-check-label">Proveedor</label>
+    </div>
+</div>
+
+<div class="form-group">
+    <label asp-for="Empresa.emp_pais" class="control-label"></label>
+    <input asp-for="Empresa.emp_pais" class="form-control" />
+    <span asp-validation-for="Empresa.emp_pais" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Empresa.emp_cp" class="control-label"></label>
+    <input asp-for="Empresa.emp_cp" class="form-control" />
+    <span asp-validation-for="Empresa.emp_cp" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Empresa.emp_poblacion" class="control-label"></label>
+    <input asp-for="Empresa.emp_poblacion" class="form-control" />
+    <span asp-validation-for="Empresa.emp_poblacion" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Empresa.emp_provincia" class="control-label"></label>
+    <input asp-for="Empresa.emp_provincia" class="form-control" />
+    <span asp-validation-for="Empresa.emp_provincia" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Empresa.emp_direccion" class="control-label"></label>
+    <input asp-for="Empresa.emp_direccion" class="form-control" />
+    <span asp-validation-for="Empresa.emp_direccion" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Empresa.emp_telefono" class="control-label"></label>
+    <input asp-for="Empresa.emp_telefono" class="form-control" />
+    <span asp-validation-for="Empresa.emp_telefono" class="text-danger"></span>
+</div>
+
+@{
+    //h.	TextArea
+}
+<div class="mb-3">
+    <label asp-for="Empresa.emp_observaciones" class="form-label"></label>
+    <textarea asp-for="Empresa.emp_observaciones" class="form-control" rows="4"></textarea>
+    <span asp-validation-for="Empresa.emp_observaciones" class="text-danger"></span>
+</div>
+
+@{
+    //a.	Dropdown List usando una lista de código
+}
+<div class="form-group">
+    <label asp-for="Empresa.emp_clasificacioncla_id" class="control-label"></label>
+    <select asp-for="Empresa.emp_clasificacioncla_id" asp-items="Model.Clasificaciones" class="form-select"></select>
+</div>
+
+<div class="form-group">
+    <label asp-for="Empresa.emp_web" class="control-label"></label>
+    <input asp-for="Empresa.emp_web" class="form-control" />
+    <span asp-validation-for="Empresa.emp_web" class="text-danger"></span>
+</div>
+
+@{
+    //g.	Número
+}
+<div class="mb-3">
+    <label asp-for="Empresa.emp_latitud" class="form-label"></label>
+    <input asp-for="Empresa.emp_latitud" type="number" class="form-control" step="0.000001" />
+    <span asp-validation-for="Empresa.emp_latitud" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Empresa.emp_longitud" class="form-label"></label>
+    <input asp-for="Empresa.emp_longitud" type="number" class="form-control" step="0.000001" />
+    <span asp-validation-for="Empresa.emp_longitud" class="text-danger"></span>
+</div>
+
+@{
+    //f.	Fecha
+}
+<div class="form-group">
+    <label asp-for="Empresa.emp_fecha_creacion" class="control-label"></label>
+    <input asp-for="Empresa.emp_fecha_creacion" class="form-control" />
+    <span asp-validation-for="Empresa.emp_fecha_creacion" class="text-danger"></span>
+</div>
+
+@{
+    //i.	Switch
+}
+<div class="form-check form-switch mb-3">
+    <input class="form-check-input" asp-for="Empresa.emp_estatus" /> @Html.DisplayNameFor(model => model.Empresa.emp_estatus)
+</div>
+
+

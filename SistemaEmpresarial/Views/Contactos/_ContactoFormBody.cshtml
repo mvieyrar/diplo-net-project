@@ -1,0 +1,117 @@
+﻿@{/*@model SistemaEmpresarial.Models.Contacto*/}
+@model SistemaEmpresarial.Models.ViewModels.ContactoFormViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+<div class="form-group">
+    <label asp-for="Contacto.con_nombre" class="control-label"></label>
+    <input asp-for="Contacto.con_nombre" class="form-control" />
+    <span asp-validation-for="Contacto.con_nombre" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Contacto.con_paterno" class="control-label"></label>
+    <input asp-for="Contacto.con_paterno" class="form-control" />
+    <span asp-validation-for="Contacto.con_paterno" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Contacto.con_materno" class="control-label"></label>
+    <input asp-for="Contacto.con_materno" class="form-control" />
+    <span asp-validation-for="Contacto.con_materno" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Contacto.con_empresa" class="control-label"></label>
+    <input asp-for="Contacto.con_empresa" class="form-control" />
+    <span asp-validation-for="Contacto.con_empresa" class="text-danger"></span>
+</div>
+@{
+    //a.	Dropdown List usando una lista de código    
+}
+<div class="form-group">
+    <label asp-for="Contacto.con_regionreg_id" class="control-label"></label>
+    <select asp-for="Contacto.con_regionreg_id" asp-items="Model.Regiones" class="form-select"></select>    
+</div>
+
+<div class="form-group">
+    <label asp-for="Contacto.con_red_social" class="control-label"></label>
+    <input asp-for="Contacto.con_red_social" class="form-control" />
+    <span asp-validation-for="Contacto.con_red_social" class="text-danger"></span>
+</div>
+@{
+    //b.	Dropdown List usando una Enumeración
+}
+<div class="form-group">
+    <label asp-for="Contacto.con_tipo_red_social" class="control-label"></label>
+    <select asp-for="Contacto.con_tipo_red_social" asp-items="Html.GetEnumSelectList<SistemaEmpresarial.Models.TipoRedSocial>()" class="form-select"></select>
+    <span asp-validation-for="Contacto.con_tipo_red_social" class="text-danger"></span>
+</div>
+@{
+    //c.	Radio button codificando en 1 campo   
+}
+<div class="mb-3">
+    <label class="form-label"></label>@Html.DisplayNameFor(model => model.Contacto.con_genero)<br />
+    <div class="form-group form-check-inline">
+        <!--<label class="form-check-label">-->
+            <input class="form-check-input" type="radio" asp-for="Contacto.con_genero" value="H" checked="@Model.Contacto.con_genero.Equals('H')"  />
+            <label class="form-check-label">Hombre</label>
+        <!--</label>-->
+    </div>
+    <div class="form-group form-check-inline">
+        <!--<label class="form-check-label">-->
+            <input class="form-check-input" type="radio" asp-for="Contacto.con_genero" value="M" checked="@Model.Contacto.con_genero.Equals('M')" />
+            <label class="form-check-label">Mujer</label>
+        <!--</label>-->
+    </div>
+</div>
+@{
+    //d.	Checkboxes
+}
+<div class="mb-3">
+    <div class="form-group form-check-inline">
+        <input asp-for="Contacto.con_disponibilidad_matutino" class="form-check-input" />
+        <label asp-for="Contacto.con_disponibilidad_matutino" class="form-check-label" /> @Html.DisplayNameFor(model => model.Contacto.con_disponibilidad_matutino)
+
+    </div>
+    <div class="form-group form-check-inline">
+        <input asp-for="Contacto.con_disponibilidad_vespertino" class="form-check-input" />
+        <label asp-for="Contacto.con_disponibilidad_vespertino" class="form-check-label" /> @Html.DisplayNameFor(model => model.Contacto.con_disponibilidad_vespertino)
+
+    </div>
+</div>
+@{
+    //e.	Lista de selección múltple
+}
+<div class="mb-3">
+    <label class="form-label">@Html.DisplayNameFor(model => model.Contacto.con_area_interes)</label>
+    <select asp-for="AreaInteresSeleccionadas" asp-items="Model.AreaInteresOptions" class="form-select" multiple size="6"></select>
+    <div class="form-text">Manten Ctrl o Cmd para seleccionar varios</div>
+</div>
+@{
+    //f.	Fecha
+}
+<div class="form-group">
+    <label asp-for="Contacto.con_fecha_creacion" class="control-label"></label>
+    <input asp-for="Contacto.con_fecha_creacion" class="form-control" />
+    <span asp-validation-for="Contacto.con_fecha_creacion" class="text-danger"></span>
+</div>
+@{
+    //g.	Número
+}
+<div class="mb-3">
+    <label asp-for="Contacto.con_peso" class="form-label"></label>
+    <input asp-for="Contacto.con_peso" type="number" class="form-control" step="0.01" />
+    <span asp-validation-for="Contacto.con_peso" class="text-danger"></span>
+
+</div>
+@{
+    //h.	TextArea
+}
+<div class="mb-3">
+    <label asp-for="Contacto.con_comentario" class="form-label"></label>
+    <textarea asp-for="Contacto.con_comentario" class="form-control" rows="4"></textarea>
+    <span asp-validation-for="Contacto.con_comentario" class="text-danger"></span>
+</div>
+@{
+    //i.	Switch
+}
+<div class="form-check form-switch mb-3">
+    <input class="form-check-input" asp-for="Contacto.con_estatus" /> @Html.DisplayNameFor(model => model.Contacto.con_estatus)
+</div>

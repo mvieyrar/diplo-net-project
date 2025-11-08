@@ -1,0 +1,24 @@
+﻿@model SistemaEmpresarial.Models.ViewModels.VendedorFormViewModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar Vendedor</h1>
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+    
+    <input type="hidden" asp-for="Vendedor.ven_id" />
+    <div class="mb-3">
+        <label class="form-label">ID</label>
+        <input class="form-control" value="@Model.Vendedor.ven_id" disabled />
+    </div>
+
+    <partial name="_VendedorFormBody" model="Model" />
+    
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>    
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,112 @@
+﻿@model SistemaEmpresarial.Models.ViewModels.VendedorIndexViewModel
+
+@{
+    ViewData["Title"] = "Vendedores";
+}
+
+<div class="row g-3">
+    <!-- Filtro -->
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-header">Filtro</div>
+            <div class="card-body">
+                <!-- Aplica filtro -->
+                <form method="get" class="vstack gap-2">
+                    <input type="hidden" name="mode" value="filter" />
+
+                    <div>
+                        <label asp-for="Filtro.ven_id" class="form-label"></label>
+                        <input asp-for="Filtro.ven_id" class="form-control" />
+                    </div>
+
+                    <div>
+                        <label asp-for="Filtro.ven_nombre_like" class="form-label"></label>
+                        <input asp-for="Filtro.ven_nombre_like" class="form-control" placeholder="Contiene…" />
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">Sucursal</label>
+                        <select asp-for="Filtro.SucursalesSeleccionadas"
+                                asp-items="Model.Filtro.SucursalesOptions"
+                                class="form-select"  ></select>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Aplicar Filtro</button>
+                    </div>
+                </form>
+
+                <!-- Mostrar todos -->
+                <form method="get" class="mt-2 d-grid">
+                    <input type="hidden" name="mode" value="all" />
+                    <button class="btn btn-outline-secondary">Mostrar todos</button>
+                </form>
+
+                <a class="btn btn-success mt-3 w-100" asp-action="Create">Crear</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="col-lg-9">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>Resultados @(Model.Resultados?.TotalCount ?? 0)</span>
+            </div>
+            <div class="card-body p-0">
+                <!-- Form de paginación (conserva filtros como hidden) -->
+                <form method="get" class="m-0 p-0">
+                    <input type="hidden" name="mode" value="filter" />
+                    <!-- Hiddens para mantener filtros al cambiar de página -->
+                    <input type="hidden" name="Filtro.ven_id" value="@(Model.Filtro.ven_id)" />
+                    <input type="hidden" name="Filtro.ven_nombre_like" value="@(Model.Filtro.ven_nombre_like)" />
+                    @foreach (var s in Model.Filtro.SucursalesSeleccionadas)
+                    {
+                        <input type="hidden" name="Filtro.SucursalesSeleccionadas" value="@s" />
+                    }
+
+                    <table class="table table-striped table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Sucursales</th>
+                                <th>Clave Agente</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Resultados is not null)
+                            {
+                                foreach (var c in Model.Resultados)
+                                {
+                                    <tr>
+                                        <td>@c.ven_id</td>
+                                        <td>@c.ven_nombre</td>
+                                        <td>@c.ven_sucursal</td>
+                                        <td>@c.ven_clave_agente</td>
+                                        <td>@c.ven_estatus</td>
+                                        <td class="text-nowrap">
+                                            <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-route-id="@c.ven_id">Consultar</a>
+                                            <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@c.ven_id">Editar</a>
+                                            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@c.ven_id">Borrar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                    <div class="p-3">
+                        @if (Model.Resultados is not null)
+                        {
+                            @await Html.PartialAsync("_Pagination", Model.Resultados)
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

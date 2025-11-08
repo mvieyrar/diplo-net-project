@@ -1,0 +1,31 @@
+﻿@{/*model SistemaEmpresarial.Models.Contacto*/}
+@model SistemaEmpresarial.Models.ViewModels.ContactoFormViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Contacto</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            @{/*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*/}
+            
+            <partial name="_ContactoFormBody" model="Model" />
+                        
+            <div class="form-group">                
+                <button type="submit" value="Create" class="btn btn-primary">Guardar</button>   
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

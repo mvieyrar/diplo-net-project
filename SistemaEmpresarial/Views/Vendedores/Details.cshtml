@@ -1,0 +1,80 @@
+﻿@model SistemaEmpresarial.Models.Vendedor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Vendedor</h4>
+    <hr />
+    
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ven_id)
+        </dd>                    
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ven_nombre)
+        </dd>        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_paterno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ven_paterno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_materno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ven_materno)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_sucursal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ven_sucursal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_rol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ven_rol)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_clave_empleado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ven_clave_empleado)
+        </dd>        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_clave_agente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ven_clave_agente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_estatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ven_estatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ven_objetivo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ven_objetivo)
+        </dd>
+    </dl>
+    
+</div>
+<div>
+    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@Model?.ven_id">Editar</a> |
+    <a class="btn btn-warning" asp-action="Index">Volver</a>
+</div>

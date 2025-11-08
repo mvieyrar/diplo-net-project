@@ -1,0 +1,53 @@
+﻿@model SistemaEmpresarial.Models.Persona
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Persona</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="per_nombre" class="control-label"></label>
+                <input asp-for="per_nombre" class="form-control" />
+                <span asp-validation-for="per_nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="per_rfc" class="control-label"></label>
+                <input asp-for="per_rfc" class="form-control" />
+                <span asp-validation-for="per_rfc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="per_correo" class="control-label"></label>
+                <input asp-for="per_correo" class="form-control" />
+                <span asp-validation-for="per_correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="per_movil" class="control-label"></label>
+                <input asp-for="per_movil" class="form-control" />
+                <span asp-validation-for="per_movil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="per_fecha_creacion" class="control-label"></label>
+                <input asp-for="per_fecha_creacion" class="form-control" />
+                <span asp-validation-for="per_fecha_creacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

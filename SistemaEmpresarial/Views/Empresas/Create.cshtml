@@ -1,0 +1,29 @@
+﻿@model SistemaEmpresarial.Models.ViewModels.EmpresaFormViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Empresa</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+                        
+            <partial name="_EmpresaFormBody" model="Model" />
+                        
+            <div class="form-group">                
+                <button type="submit" value="Create" class="btn btn-primary">Guardar</button>   
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

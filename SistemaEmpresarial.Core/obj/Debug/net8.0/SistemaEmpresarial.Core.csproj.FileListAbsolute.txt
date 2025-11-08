@@ -1,0 +1,11 @@
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\bin\Debug\net8.0\SistemaEmpresarial.Core.deps.json
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\bin\Debug\net8.0\SistemaEmpresarial.Core.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\bin\Debug\net8.0\SistemaEmpresarial.Core.pdb
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\obj\Debug\net8.0\SistemaEmpresarial.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\obj\Debug\net8.0\SistemaEmpresarial.Core.AssemblyInfoInputs.cache
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\obj\Debug\net8.0\SistemaEmpresarial.Core.AssemblyInfo.cs
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\obj\Debug\net8.0\SistemaEmpresarial.Core.csproj.CoreCompileInputs.cache
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\obj\Debug\net8.0\SistemaEmpresarial.Core.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\obj\Debug\net8.0\refint\SistemaEmpresarial.Core.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\obj\Debug\net8.0\SistemaEmpresarial.Core.pdb
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Core\obj\Debug\net8.0\ref\SistemaEmpresarial.Core.dll

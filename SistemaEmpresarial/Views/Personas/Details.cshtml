@@ -1,0 +1,48 @@
+﻿@model SistemaEmpresarial.Models.Persona
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.per_nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.per_nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.per_rfc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.per_rfc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.per_correo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.per_correo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.per_movil)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.per_movil)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.per_fecha_creacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.per_fecha_creacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.per_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

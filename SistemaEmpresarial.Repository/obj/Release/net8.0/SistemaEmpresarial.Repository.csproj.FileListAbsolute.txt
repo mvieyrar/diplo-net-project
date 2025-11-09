@@ -1,0 +1,12 @@
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\bin\Release\net8.0\SistemaEmpresarial.Repository.deps.json
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\bin\Release\net8.0\SistemaEmpresarial.Repository.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\bin\Release\net8.0\SistemaEmpresarial.Repository.pdb
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\SistemaEmpresarial.Repository.csproj.AssemblyReference.cache
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\SistemaEmpresarial.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\SistemaEmpresarial.Repository.AssemblyInfoInputs.cache
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\SistemaEmpresarial.Repository.AssemblyInfo.cs
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\SistemaEmpresarial.Repository.csproj.CoreCompileInputs.cache
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\SistemaEmpresarial.Repository.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\refint\SistemaEmpresarial.Repository.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\SistemaEmpresarial.Repository.pdb
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.Repository\obj\Release\net8.0\ref\SistemaEmpresarial.Repository.dll

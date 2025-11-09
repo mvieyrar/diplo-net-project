@@ -1,0 +1,17 @@
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\bin\Release\net8.0\SistemaEmpresarial.BusinessLayer.deps.json
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\bin\Release\net8.0\SistemaEmpresarial.BusinessLayer.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\bin\Release\net8.0\SistemaEmpresarial.BusinessLayer.pdb
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\bin\Release\net8.0\SistemaEmpresarial.Core.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\bin\Release\net8.0\SistemaEmpresarial.Repository.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\bin\Release\net8.0\SistemaEmpresarial.Core.pdb
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\bin\Release\net8.0\SistemaEmpresarial.Repository.pdb
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\SistemaEmpresarial.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\SistemaEmpresarial.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\SistemaEmpresarial.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\SistemaEmpresarial.BusinessLayer.AssemblyInfo.cs
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\SistemaEmpresarial.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\SistemaE.4C951495.Up2Date
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\SistemaEmpresarial.BusinessLayer.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\refint\SistemaEmpresarial.BusinessLayer.dll
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\SistemaEmpresarial.BusinessLayer.pdb
+C:\Users\aleviemk\source\repos\SistemaEmpresarial\SistemaEmpresarial.BusinessLayer\obj\Release\net8.0\ref\SistemaEmpresarial.BusinessLayer.dll

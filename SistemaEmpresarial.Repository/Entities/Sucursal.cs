@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaEmpresarial.Repository.Entities
 
 {
+    [Table("sucursal")]
     public class Sucursal
     {
         [Key]

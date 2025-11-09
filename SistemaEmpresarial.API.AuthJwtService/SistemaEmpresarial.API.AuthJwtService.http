@@ -1,0 +1,6 @@
+@SistemaEmpresarial.API.AuthJwtService_HostAddress = http://localhost:5001
+
+GET {{SistemaEmpresarial.API.AuthJwtService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

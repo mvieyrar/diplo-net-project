@@ -12,8 +12,10 @@ builder.Services.AddDbContext<AppDbContext>(Options => { Options.UseSqlServer(
     ); });
 builder.Services.AddScoped<UnitWork>();
 builder.Services.AddScoped<RegionBusiness>();
+builder.Services.AddScoped<SucursalBusiness>();
 builder.Services.AddScoped<GeneralRepository>();
 builder.Services.AddScoped<RegionRepository>();
+builder.Services.AddScoped<SucursalRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

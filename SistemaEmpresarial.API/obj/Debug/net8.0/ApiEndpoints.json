@@ -10,6 +10,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SistemaEmpresarial.API.Controllers.SucursalesController",
+    "Method": "GetSucursales",
+    "RelativePath": "api/Sucursales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SistemaEmpresarial.API.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

@@ -1,0 +1,39 @@
+[
+  {
+    "ContainingType": "SistemaEmpresarial.API.AuthJwtService.Controllers.InicioDeSesionesController",
+    "Method": "IniciarSesion",
+    "RelativePath": "api/InicioDeSesiones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inicioDeSesionDto",
+        "Type": "SistemaEmpresarial.API.AuthJwtService.Dtos.InicioDeSesionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEmpresarial.API.AuthJwtService.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaEmpresarial.API.AuthJwtService.WeatherForecast, SistemaEmpresarial.API.AuthJwtService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

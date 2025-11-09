@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaEmpresarial.Reposito
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaEmpresarial.BusinessLayer", "SistemaEmpresarial.BusinessLayer\SistemaEmpresarial.BusinessLayer.csproj", "{AC433103-742E-45B3-8293-E16CE70428CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaEmpresarial.API.AuthJwtService", "SistemaEmpresarial.API.AuthJwtService\SistemaEmpresarial.API.AuthJwtService.csproj", "{038205E8-85BB-4B5F-A30C-FA2F19E456A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AC433103-742E-45B3-8293-E16CE70428CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC433103-742E-45B3-8293-E16CE70428CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC433103-742E-45B3-8293-E16CE70428CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{038205E8-85BB-4B5F-A30C-FA2F19E456A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{038205E8-85BB-4B5F-A30C-FA2F19E456A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{038205E8-85BB-4B5F-A30C-FA2F19E456A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{038205E8-85BB-4B5F-A30C-FA2F19E456A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
